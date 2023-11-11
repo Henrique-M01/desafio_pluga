@@ -1,7 +1,6 @@
 import React from "react";
 import Search from './components/search.jsx';
-import Card from "./components/card.jsx";
-import logo from './logo.svg';
+import Main from './components/main.jsx';
 import "./App.css";
 
 function App() {
@@ -10,9 +9,7 @@ function App() {
       <header>
         <Search />
       </header>
-      <main className="main-content">
-        <Card name="teste1" icon={logo}/>
-      </main>
+      <Main />
     </div>
   );
 }
