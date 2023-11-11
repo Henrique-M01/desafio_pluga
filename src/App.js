@@ -1,9 +1,12 @@
-import './App.css';
+import React from "react";
+import Search from './components/search.jsx';
 
 function App() {
   return (
     <div className="App">
-      Let's gooooooooooo!
+      <header>
+        <Search />
+      </header>
     </div>
   );
 }

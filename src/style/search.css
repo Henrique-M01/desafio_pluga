@@ -1,0 +1,35 @@
+.search-bar {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  width: 50%;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 35px;
+  border-radius: 10px;
+  background-color: azure;
+}
+
+.search-bar:hover {
+  cursor: pointer;
+}
+
+.search-icon {
+  font-size: x-large;
+}
+
+.search-input {
+  border: none;
+  font-size: x-large;
+  background-color: azure;
+  color: gray;
+}
+
+.search-input:hover {
+  cursor: pointer;
+}
+
