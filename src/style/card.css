@@ -1,0 +1,25 @@
+.card-box {
+  max-width: 200px;
+  max-height: 350px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: blanchedalmond;
+}
+
+.card-box:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.card-icon {
+  border-radius: 25%;
+}
+
+.card-title {
+  font-weight: 400;
+}
