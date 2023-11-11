@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-
 import Card from "./card.jsx";
+import Modal from "./modal.jsx";
 import { getJSONTools } from "../helpers/getData.js";
 import '../style/main.css';
+
 
 function Main() {
   const [tools, setTools] = useState([]);
@@ -20,8 +21,10 @@ function Main() {
           link={tool.link}
           color={tool.color}
           id={tool.app_id}
+          key={tool.app_id}
         />
       ))}
+      <Modal />
     </main>
   )
 }

@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
+import Context from "../context/contex";
 import "../style/card.css"
 
 function Card(props) {
-  //const [link, setLink] = useContext(props.link);
+  const { setModalContent, setIsOpen, isOpen } = useContext(Context);
+
+  function HandleCLick() {
+    setIsOpen(!isOpen);
+
+    setModalContent(props);
+  }
 
   return (
     <div
       id={props.id}
       className="card-box"
       style={{backgroundColor: props.color}}
+      onClick={HandleCLick}
     >
       <img
         className="card-icon"
