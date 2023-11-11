@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
 import Card from "./card.jsx";
-import logo from '../logo.svg';
+import { getJSONTools } from "../helpers/getData.js";
 import '../style/main.css';
 
 function Main() {
+  const [tools, setTools] = useState([]);
+
+  useEffect(() => {
+    getJSONTools().then((data) => setTools(data));
+  }, [])
+
   return (
     <main className="main-content">
-      <Card name="teste1" icon={logo}/>
+      {tools.map((tool) => (
+        <Card
+          name={tool.name}
+          icon={tool.icon}
+          link={tool.link}
+          color={tool.color}
+          id={tool.app_id}
+        />
+      ))}
     </main>
   )
 }
