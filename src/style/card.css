@@ -1,6 +1,8 @@
 .card-box {
   max-width: 200px;
-  max-height: 350px;
+  min-width: 30%;
+
+  height: 350px;
 
   display: flex;
   flex-flow: column nowrap;
@@ -8,6 +10,7 @@
   align-items: center;
   border-radius: 10px;
   border: 1px solid black;
+  flex: 1 1;
 }
 
 .card-box:hover {
@@ -17,8 +20,12 @@
 
 .card-icon {
   border-radius: 25%;
+  max-width: 50%;
+  max-height: 50%;
 }
 
 .card-title {
   font-weight: 400;
+  color: aliceblue;
+  text-align: center;
 }
