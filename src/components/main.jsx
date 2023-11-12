@@ -5,12 +5,11 @@ import Context from "../context/contex.js";
 import Footer from "./footer.jsx";
 import '../style/main.css';
 
-
 function Main() {
   const { tools, page, setPage, setLastToolsOpen, lastToolsOpen } = useContext(Context);
 
   function validateSetPage(newPage) {
-    if (newPage >= 1 && newPage <= tools.length) {
+    if (newPage >= 1 && newPage <= Math.ceil(tools.length / 12)) {
       setPage(newPage);
     }
   }
@@ -28,7 +27,24 @@ function Main() {
   return (
     <>  
       <main className="main-content">
-        {tools.map((toolGroup, index) => {
+        {tools.map((tool, index) => {
+          const pageLimit = 12 * page;
+
+          if (index < pageLimit && index >= pageLimit-12) {
+            return (
+              <Card
+                name={tool.name}
+                icon={tool.icon}
+                link={tool.link}
+                color={tool.color}
+                id={tool.app_id}
+                key={tool.app_id}
+                inModal={false}
+              />
+            )
+          }
+        })}
+        {/* {tools.map((toolGroup, index) => {
           if (index < page && index >= page-1) {
             return toolGroup.map((tool) => (
               <Card
@@ -44,7 +60,7 @@ function Main() {
           }
 
           return null;
-        })}
+        })} */}
       </main>
       <Footer page={page} setPage={validateSetPage} />
       <Modal />
