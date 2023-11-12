@@ -20,8 +20,9 @@
   border: 10px;
 }
 
-.modal-header {
+.modal-close-btn {
   align-items: flex-end;
+  padding: 10px;
 }
 
 .modal-content {
@@ -67,4 +68,9 @@
   justify-content: space-between;
   padding: 20px;
   flex-flow: row nowrap;
+}
+
+.modal-last-tool-title {
+  margin-bottom: -5px;
+  margin-left: 25px;
 }

@@ -45,11 +45,10 @@ function Modal() {
           className="modal-main"
           id={modalContent.app_id}
         >
-          <header className="modal-header">
-            <AiOutlineClose
+          <AiOutlineClose
+          className="modal-close-btn"
             onClick={handleClose}
-            />
-          </header>
+          />
           <div className="modal-content">
             <section className="modal-tool">
               <img
