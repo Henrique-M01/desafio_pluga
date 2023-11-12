@@ -43,6 +43,8 @@ function Main() {
               />
             )
           }
+
+          return null;
         })}
         {/* {tools.map((toolGroup, index) => {
           if (index < page && index >= page-1) {
