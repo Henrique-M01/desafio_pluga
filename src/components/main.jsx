@@ -6,7 +6,7 @@ import Footer from "./footer.jsx";
 import '../style/main.css';
 
 function Main() {
-  const { tools, page, setPage, setLastToolsOpen, lastToolsOpen } = useContext(Context);
+  const { tools, page, setPage, setLastToolsOpen, lastToolsOpen, wordFilter } = useContext(Context);
 
   function validateSetPage(newPage) {
     if (newPage >= 1 && newPage <= Math.ceil(tools.length / 12)) {
@@ -22,47 +22,39 @@ function Main() {
     } else if (JSON.stringify(lastTools) !== JSON.stringify(lastToolsOpen)) {
       setLastToolsOpen(lastTools);
     }// eslint-disable-next-line
-  },[lastToolsOpen]);
+  },[lastToolsOpen, wordFilter]);
 
   return (
     <>  
       <main className="main-content">
-        {tools.map((tool, index) => {
-          const pageLimit = 12 * page;
+        {
+          tools.filter((tool) => {
+            if (wordFilter !== '') {
+              return tool.name.toUpperCase().includes(wordFilter.toUpperCase());
+            } else  {
+              return tool;
+            }
+          })
+          .map((tool, index) => {
+            const pageLimit = 12 * page;
 
-          if (index < pageLimit && index >= pageLimit-12) {
-            return (
-              <Card
-                name={tool.name}
-                icon={tool.icon}
-                link={tool.link}
-                color={tool.color}
-                id={tool.app_id}
-                key={tool.app_id}
-                inModal={false}
-              />
-            )
-          }
+            if (index < pageLimit && index >= pageLimit-12) {
+              return (
+                <Card
+                  name={tool.name}
+                  icon={tool.icon}
+                  link={tool.link}
+                  color={tool.color}
+                  id={tool.app_id}
+                  key={tool.app_id}
+                  inModal={false}
+                />
+              )
+            }
 
-          return null;
-        })}
-        {/* {tools.map((toolGroup, index) => {
-          if (index < page && index >= page-1) {
-            return toolGroup.map((tool) => (
-              <Card
-                name={tool.name}
-                icon={tool.icon}
-                link={tool.link}
-                color={tool.color}
-                id={tool.app_id}
-                key={tool.app_id}
-                inModal={false}
-              />
-            ))
-          }
-
-          return null;
-        })} */}
+            return null;
+          })
+        }
       </main>
       <Footer page={page} setPage={validateSetPage} />
       <Modal />

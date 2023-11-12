@@ -16,6 +16,7 @@ function ProviderHook({ children }) {
   const [tools,setTools] = useState([]);
   const [page, setPage] = useState(1);
   const [lastToolsOpen, setLastToolsOpen] = useState([]);
+  const [wordFilter, setWordFilter] = useState('');
 
   getJSONTools().then((data) => setTools(data));
 
@@ -28,7 +29,9 @@ function ProviderHook({ children }) {
     setPage,
     tools,
     lastToolsOpen,
-    setLastToolsOpen
+    setLastToolsOpen,
+    wordFilter,
+    setWordFilter
   }
 
   return (
