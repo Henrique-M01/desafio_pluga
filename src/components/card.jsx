@@ -11,12 +11,19 @@ function Card(props) {
     setModalContent(props);
   }
 
+  const STYLE_CARD = {
+    height: props.inModal ? "180px" : "350px",
+    borderRadius: props.inModal ? "25px" : "10px",
+    minWidth: props.inModal ? "15%" : "30%",
+    backgroundColor: props.color
+  }
+
   return (
     <div
       id={props.id}
       className="card-box"
-      style={{backgroundColor: props.color}}
-      onClick={HandleCLick}
+      style={STYLE_CARD}
+      onClick={props.inModal ? null : HandleCLick}
     >
       <img
         className="card-icon"

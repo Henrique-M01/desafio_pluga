@@ -1,14 +1,9 @@
 .card-box {
   max-width: 200px;
-  min-width: 30%;
-
-  height: 350px;
-
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
   border: 1px solid black;
   flex: 1 1;
 }
