@@ -1,0 +1,17 @@
+.footer-box {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 20px;
+}
+
+.footer-previos:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
+
+.footer-next:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
