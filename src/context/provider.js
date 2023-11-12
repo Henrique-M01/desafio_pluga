@@ -15,21 +15,24 @@ function ProviderHook({ children }) {
   const [isOpen, setIsOpen] = useState(false);
   const [tools,setTools] = useState([]);
   const [page, setPage] = useState(1);
+  const [lastToolsOpen, setLastToolsOpen] = useState([]);
 
   getJSONTools().then((data) => setTools(data));
 
-  const MODAL_CONTENT = {
+  const CONTENT = {
     modalContent,
     setModalContent,
     isOpen,
     setIsOpen,
     page,
     setPage,
-    tools
+    tools,
+    lastToolsOpen,
+    setLastToolsOpen
   }
 
   return (
-    <Context.Provider value={ MODAL_CONTENT }>
+    <Context.Provider value={ CONTENT }>
       {children}
     </Context.Provider>
   )

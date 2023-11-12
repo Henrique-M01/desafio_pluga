@@ -32,24 +32,39 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  gap: 20px;
-  max-height: 60%;
+  gap: 45px;
+  height: 50%;
 }
 
 .modal-tool-icon {
-  border-radius: 70%;
-  max-width: 50%;
-  max-height: 50%;
+  border-radius: 30px;
+  height: 180px;
+  width: 180px;
+  padding: 10px;
 }
 
 .modal-tool-name {
   font-weight: 600;
+  font-size: 60px;
+  margin: 20px 0px;
 }
 
 .modal-tool-btn {
   border: none;
   border-radius: 10px;
+  font-size: x-large;
   text-align: center;
-  padding: 10px;
+  padding: 20px 35px;
   color: white;
+}
+
+.modal-last-tools {
+  min-height: 30%;
+}
+
+.modal-last-tool-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  flex-flow: row nowrap;
 }
