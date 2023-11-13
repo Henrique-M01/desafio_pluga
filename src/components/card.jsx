@@ -24,6 +24,7 @@ function Card(props) {
       className="card-box"
       style={STYLE_CARD}
       onClick={props.inModal ? null : HandleCLick}
+      data-testid="card"
     >
       <img
         className="card-icon"

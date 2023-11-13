@@ -46,7 +46,8 @@ function Modal() {
           id={modalContent.app_id}
         >
           <AiOutlineClose
-          className="modal-close-btn"
+            className="modal-close-btn"
+            data-testid="close-modal"
             onClick={handleClose}
           />
           <div className="modal-content">
