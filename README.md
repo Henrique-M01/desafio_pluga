@@ -1,7 +1,5 @@
 # Desafio Desenvolvedor Jr - Pluga
 
-# Desafio técnico - Mettzer
-
 # Contexto
 Este projeto trata-se de um desafio técnico proposto pela empresa Pluga, o desafio contava com as seguintes instrucoes: 
 
