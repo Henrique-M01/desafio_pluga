@@ -17,10 +17,14 @@ function ProviderHook({ children }) {
   const [page, setPage] = useState(1);
   const [lastToolsOpen, setLastToolsOpen] = useState([]);
   const [wordFilter, setWordFilter] = useState('');
+  const [hasError, setHasError] = useState(false);
 
-  getJSONTools().then((data) => setTools(data));
+  getJSONTools()
+    .then((data) => setTools(data))
+    .catch((_error) => setHasError(true));
 
   const CONTENT = {
+    hasError,
     modalContent,
     setModalContent,
     isOpen,

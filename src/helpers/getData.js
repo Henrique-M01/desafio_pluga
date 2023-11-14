@@ -1,8 +1,10 @@
-async function getJSONTools() {
-  const response = await fetch("https://pluga.co/ferramentas_search.json");
-  const tools = await response.json();
-
-  return tools;
+function getJSONTools() {
+  
+    return fetch("https://pluga.co/ferramentas_search.json")
+      .then((response) => {
+        response.json().then((tools) => tools) 
+      })
+      .catch((error) => undefined);
 }
 
 export {
